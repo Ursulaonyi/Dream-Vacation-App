@@ -36,7 +36,7 @@ jobs:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/dream-vacation-frontendvac-frontend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/dream-vacation-frontend:latest
 
 
       - name: SSH and Deploy on EC2
@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/${{ secrets.AWS_USER }}/dream-vacation-app
+            cd /home/${{ secrets.AWS_USER }}/Dream-vacation-app
             git pull origin main
             docker-compose pull
             docker-compose up -d --remove-orphans
