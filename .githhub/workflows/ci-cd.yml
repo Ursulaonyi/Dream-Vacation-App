@@ -42,7 +42,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/dream-vacation-frontendvac-frontend:latest
 
 
-      - name: 🤝 SSH and Deploy on EC2
+      - name: SSH and Deploy on EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.AWS_HOST }}
