@@ -7,10 +7,10 @@ services:
     container_name: dream-vacation-mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: Ursonyi@29
-      MYSQL_DATABASE: dreamvacations
-      MYSQL_USER: dreamuser
-      MYSQL_PASSWORD: Ursonyi@29
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3307:3306"
     volumes:
@@ -33,13 +33,13 @@ services:
     ports:
       - "3001:3001"
     environment:
-      - PORT=3001
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_USER=root
-      - DB_PASSWORD=Ursonyi@29
-      - DB_NAME=dreamvacations
-      - COUNTRIES_API_BASE_URL=https://restcountries.com/v3.1
+      - PORT=${PORT}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - COUNTRIES_API_BASE_URL=${COUNTRIES_API_BASE_URL}
     depends_on:
       mysql:
         condition: service_healthy

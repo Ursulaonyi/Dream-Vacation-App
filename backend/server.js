@@ -13,10 +13,6 @@ app.use(express.json());
 
 // MySQL Connection Pool
 const pool = mysql.createPool({
-  // host: 'mysql', // Replace with your host if different
-  // user: 'root', // Replace with your MySQL username
-  // password: 'Ursonyi@29', // Replace with your MySQL password
-  // database: 'dreamvacations', // Replace with your database name
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
