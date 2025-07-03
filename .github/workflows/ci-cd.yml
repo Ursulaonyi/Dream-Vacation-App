@@ -45,8 +45,9 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          
           script: |
-            cd /home/${{ secrets.AWS_USER }}/Dream-vacation-app
+            cd /home/${{ secrets.AWS_USER }}/Dream-Vacation-App
             git pull origin main
             docker-compose pull
             docker-compose up -d --remove-orphans
