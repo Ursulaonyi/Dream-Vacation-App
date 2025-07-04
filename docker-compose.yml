@@ -9,7 +9,7 @@ services:
   backend:
     image: ursulaonyi/dream-vacation-backend-2:latest
     ports:
-      - "3001:3001"
+      - "3001:3000"
     env_file:
       - .env
 
