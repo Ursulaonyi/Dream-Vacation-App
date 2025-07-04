@@ -17,7 +17,7 @@ services:
       - mysql_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
-      - dream-vacation-network
+      - dream-vacations-network
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
@@ -28,7 +28,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: dream-vacation-backend
+    container_name: dream-vacation-backend-2
     restart: unless-stopped
     ports:
       - "3001:3001"
@@ -44,7 +44,7 @@ services:
       mysql:
         condition: service_healthy
     networks:
-      - dream-vacation-network
+      - dream-vacations-network
     volumes:
       - ./backend:/app
       - /app/node_modules
@@ -54,7 +54,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: dream-vacation-frontend
+    container_name: dream-vacation-frontend-2
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -65,7 +65,7 @@ services:
     depends_on:
       - backend
     networks:
-      - dream-vacation-network
+      - dream-vacations-network
     volumes:
       - ./frontend:/app
       - /app/node_modules
@@ -76,5 +76,5 @@ volumes:
   mysql_data:
 
 networks:
-  dream-vacation-network:
+  dream-vacations-network:
     driver: bridge

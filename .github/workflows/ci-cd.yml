@@ -28,7 +28,7 @@ jobs:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/dream-vacation-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/dream-vacation-backend-2:latest
           no-cache: true
 
       - name: Build and push Docker images
@@ -37,7 +37,7 @@ jobs:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/dream-vacation-frontend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/dream-vacation-frontend-2:latest
           no-cache: true
 
 
