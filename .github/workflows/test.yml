@@ -37,8 +37,8 @@ jobs:
 
       - name: Run backend container for tests
         run: |
-          docker run --rm test-backend:latest npm test  # or your test command
+          docker run --rm test-backend:latest npm test
 
       - name: Run frontend container for tests
         run: |
-          docker run --rm test-frontend:latest npm test  # or your test command
+          docker run --rm test-frontend:latest npm test
