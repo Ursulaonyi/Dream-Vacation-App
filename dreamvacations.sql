@@ -29,7 +29,7 @@ CREATE TABLE `destinations` (
   `population` bigint DEFAULT NULL,
   `region` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,6 @@ CREATE TABLE `destinations` (
 
 LOCK TABLES `destinations` WRITE;
 /*!40000 ALTER TABLE `destinations` DISABLE KEYS */;
-INSERT INTO `destinations` VALUES (14,'Canada','Ottawa',38005238,'Americas'),(18,'USA','Washington, D.C.',329484123,'Americas'),(20,'France','Paris',67391582,'Europe'),(21,'Kenya','Nairobi',53771300,'Africa'),(23,'Nigeria','Abuja',206139587,'Africa'),(24,'India','New Delhi',1380004385,'Asia'),(25,'Ghana','Accra',31072945,'Africa'),(26,'Uganda','Kampala',45741000,'Africa'),(27,'Spain','Madrid',47351567,'Europe'),(28,'Sudan','Khartoum',43849269,'Africa'),(29,'United Kingdom','London',67215293,'Europe');
 /*!40000 ALTER TABLE `destinations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-20 19:34:00
+-- Dump completed on 2025-07-18 23:01:12
