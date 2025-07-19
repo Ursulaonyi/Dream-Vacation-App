@@ -36,11 +36,11 @@ jobs:
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.AWS_HOST }}
-        username: ubuntu
-        key: ${{ SSH_PRIVATE_KEY }}
+        username: ${{ secrets.AWS_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/dream-vacation-backend:latest
-          docker pull ${{ secrets.DOCKER_USERNAME }}/dream-vacation-frontend:latest
-          cd ~/app-directory
-          docker compose down
-          docker compose up -d --build
+          cd /home/ubuntu/Dream-Vacation-App
+          docker-compose down --remove-orphans
+          docker system prune -af
+          docker-compose pull
+          docker-compose up -d
